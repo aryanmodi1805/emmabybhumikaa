@@ -1,0 +1,210 @@
+/* Cards Container Styles */
+.cards-container {
+  background: transparent;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.cards-container h2 {
+  color: #1a1a2e;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  will-change: transform;
+}
+
+.hover-card {
+  position: relative;
+}
+
+.hover-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  transition: transform 0.2s ease;
+  width: 100%;
+  will-change: transform;
+}
+
+.hover-card:hover .card-img-top {
+  transform: scale(1.02);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.2s ease;
+  border-radius: 0 0 15px 15px;
+  will-change: transform;
+}
+
+.hover-card:hover .card-overlay,
+.hover-card.show-overlay .card-overlay {
+  transform: translateY(0);
+}
+
+.card-overlay .card-title {
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.card-overlay .card-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.card-overlay .badge {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-overlay .text-primary {
+  color: #4f46e5 !important;
+  font-weight: 700;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: #1a1a2e;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #3730a3, #6d28d9);
+  transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transform: translateY(-1px);
+}
+
+/* Overlay button styles */
+.card-overlay .btn-primary {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.card-overlay .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.card-overlay .btn-outline-secondary {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+}
+
+.card-overlay .btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.7);
+  color: white;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+}
+
+.text-primary {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .cards-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .cards-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Disable hover effects on mobile */
+  .hover-card:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hover-card:hover .card-img-top {
+    transform: none;
+  }
+  
+  /* Mobile click interaction */
+  .hover-card.mobile-active {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hover-card.mobile-active .card-img-top {
+    transform: scale(1.02);
+  }
+  
+  /* Reduce animation complexity on mobile */
+  .card-overlay {
+    transition: transform 0.15s ease;
+  }
+  
+  .card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+}

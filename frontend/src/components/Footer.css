@@ -1,0 +1,121 @@
+/* Footer Component Styles */
+.footer {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 5rem;
+}
+
+.footer-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fbbf24, #f59e0b, #d97706);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  background: linear-gradient(to right, #fbbf24, #f59e0b, #d97706);
+  color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .footer-container {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .footer-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-description {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .footer-links {
+    gap: 0.25rem;
+    justify-content: center;
+  }
+  
+  .footer-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    margin: 0.1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .footer-container {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 3rem 2rem;
+  }
+  
+  .footer-title {
+    font-size: 1.75rem;
+  }
+  
+  .footer-description {
+    font-size: 1rem;
+  }
+  
+  .footer-links {
+    gap: 1.5rem;
+  }
+  
+  .footer-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
