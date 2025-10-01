@@ -12,7 +12,7 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="whatsapp-button animate-float hover-scale" onClick={handleWhatsAppClick}>
+    <div className="whatsapp-button hover-scale" onClick={handleWhatsAppClick}>
       <svg
         width="24"
         height="24"

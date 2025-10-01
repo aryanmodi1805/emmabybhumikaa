@@ -183,33 +183,33 @@
   }
 }
 
-/* Animation Classes */
+/* Animation Classes - Optimized for Performance */
 .animate-fadeInUp {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
 .animate-fadeInLeft {
-  animation: fadeInLeft 0.8s ease-out forwards;
+  animation: fadeInLeft 0.4s ease-out forwards;
 }
 
 .animate-fadeInRight {
-  animation: fadeInRight 0.8s ease-out forwards;
+  animation: fadeInRight 0.4s ease-out forwards;
 }
 
 .animate-fadeInDown {
-  animation: fadeInDown 0.8s ease-out forwards;
+  animation: fadeInDown 0.4s ease-out forwards;
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
 .animate-scaleIn {
-  animation: scaleIn 0.6s ease-out forwards;
+  animation: scaleIn 0.3s ease-out forwards;
 }
 
 .animate-slideInFromBottom {
-  animation: slideInFromBottom 0.8s ease-out forwards;
+  animation: slideInFromBottom 0.4s ease-out forwards;
 }
 
 .animate-bounce {
@@ -221,23 +221,23 @@
 }
 
 .animate-shake {
-  animation: shake 0.5s ease-in-out;
+  animation: shake 0.3s ease-in-out;
 }
 
 .animate-glow {
-  animation: glow 2s ease-in-out infinite;
+  animation: glow 1.5s ease-in-out infinite;
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 
 .animate-rotate {
-  animation: rotate 2s linear infinite;
+  animation: rotate 1.5s linear infinite;
 }
 
 .animate-wiggle {
-  animation: wiggle 1s ease-in-out;
+  animation: wiggle 0.8s ease-in-out;
 }
 
 .animate-gradient {
@@ -245,38 +245,42 @@
   animation: gradientShift 3s ease infinite;
 }
 
-/* Hover Effects */
+/* Hover Effects - Optimized */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
 }
 
 .hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .hover-scale {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
 
 .hover-scale:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .hover-glow {
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease;
+  will-change: box-shadow;
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(79, 70, 229, 0.6);
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5);
 }
 
 .hover-rotate {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
 
 .hover-rotate:hover {
-  transform: rotate(5deg);
+  transform: rotate(3deg);
 }
 
 /* Staggered Animation Delays */
@@ -322,13 +326,52 @@
   transform: translateY(0);
 }
 
+/* Performance optimizations for all devices */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeInUp,
+  .animate-fadeInLeft,
+  .animate-fadeInRight,
+  .animate-fadeInDown,
+  .animate-fadeIn,
+  .animate-scaleIn,
+  .animate-slideInFromBottom {
+    animation: fadeIn 0.2s ease-out forwards;
+  }
+  
+  .animate-bounce,
+  .animate-pulse,
+  .animate-float,
+  .animate-rotate,
+  .animate-wiggle,
+  .animate-shake,
+  .animate-glow {
+    animation: none;
+  }
+  
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .hover-glow:hover,
+  .hover-rotate:hover {
+    transform: none;
+  }
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .animate-fadeInUp,
   .animate-fadeInLeft,
   .animate-fadeInRight,
   .animate-slideInFromBottom {
-    animation-duration: 0.4s;
+    animation-duration: 0.3s;
   }
   
   .hover-lift:hover,
@@ -341,12 +384,33 @@
   .animate-pulse,
   .animate-float,
   .animate-rotate {
-    animation-duration: 1s;
+    animation-duration: 0.8s;
   }
   
   /* Disable complex animations on mobile */
   .animate-wiggle,
   .animate-shake {
+    animation: none;
+  }
+}
+
+/* Low-end device optimizations */
+@media (max-width: 480px) {
+  .animate-fadeInUp,
+  .animate-fadeInLeft,
+  .animate-fadeInRight,
+  .animate-slideInFromBottom {
+    animation-duration: 0.2s;
+  }
+  
+  /* Disable most animations on very small screens */
+  .animate-bounce,
+  .animate-pulse,
+  .animate-float,
+  .animate-rotate,
+  .animate-wiggle,
+  .animate-shake,
+  .animate-glow {
     animation: none;
   }
 }

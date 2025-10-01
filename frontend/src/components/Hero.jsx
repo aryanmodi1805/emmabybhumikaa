@@ -9,11 +9,11 @@ const Hero = () => {
           <h1 className="hero-title animate-fadeInUp animate-delay-1">
             Our Collection
           </h1>
-          <p className="hero-description animate-fadeInUp animate-delay-2">
+          <p className="hero-description animate-fadeInUp animate-delay-1">
             Discover the latest trends in fashion with our exclusive clothing collection designed for the modern lifestyle
           </p>
-          <div className="hero-buttons animate-fadeInUp animate-delay-3">
-            <button className="hero-button-primary hover-lift hover-glow">
+          <div className="hero-buttons animate-fadeInUp animate-delay-2">
+            <button className="hero-button-primary hover-lift">
               Shop Now
             </button>
             <button className="hero-button-secondary hover-lift">

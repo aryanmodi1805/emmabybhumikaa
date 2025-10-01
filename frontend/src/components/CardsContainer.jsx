@@ -17,7 +17,7 @@ const CardsContainer = () => {
         </div>
         <div className="row g-4 justify-content-center">
           {cardsData.map((card, index) => (
-            <div key={card.id} className={`col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center animate-fadeInUp animate-delay-${Math.min(index + 1, 3)}`}>
+            <div key={card.id} className={`col-lg-4 col-md-6 col-sm-6 d-flex justify-content-center animate-fadeInUp animate-delay-${Math.min(index + 1, 2)}`}>
               <Card card={card} />
             </div>
           ))}

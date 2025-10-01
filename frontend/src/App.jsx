@@ -8,10 +8,12 @@ import Contact from "./pages/Contact";
 import Loader from "./components/Loader";
 import WhatsAppButton from "./components/WhatsAppButton";
 import { getVideoUrl, getLogoUrl } from "./config/api";
+import { usePerformanceMode } from "./hooks/usePerformanceMode";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [preloadProgress, setPreloadProgress] = useState(0);
+  const { shouldReduceAnimations } = usePerformanceMode();
 
   // Preload all media files
   useEffect(() => {
@@ -104,6 +106,14 @@ function App() {
 
     preloadMedia();
   }, []);
+
+  useEffect(() => {
+    if (shouldReduceAnimations) {
+      document.body.classList.add('reduce-motion');
+    } else {
+      document.body.classList.remove('reduce-motion');
+    }
+  }, [shouldReduceAnimations]);
 
   return (
     <Router>

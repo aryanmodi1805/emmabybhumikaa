@@ -3,7 +3,7 @@ import './Switch.css';
 
 const Switch = ({ isMuted, onToggle }) => {
   return (
-    <div className="switch-wrapper animate-fadeInUp animate-delay-4">
+    <div className="switch-wrapper animate-fadeInUp animate-delay-2">
       <input 
         className="switch-checkbox" 
         id="switch" 

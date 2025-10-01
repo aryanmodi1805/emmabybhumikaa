@@ -13,8 +13,8 @@ const Footer = () => {
           <h2 className="footer-title animate-fadeInUp animate-delay-1">
             Fashion Collection
           </h2>
-          <p className="footer-description animate-fadeInUp animate-delay-2">Discover your perfect style with our exclusive clothing line</p>
-          <div className="footer-links animate-fadeInUp animate-delay-3">
+          <p className="footer-description animate-fadeInUp animate-delay-1">Discover your perfect style with our exclusive clothing line</p>
+          <div className="footer-links animate-fadeInUp animate-delay-2">
             <Link to="/" className="footer-link hover-lift">Home</Link>
             <Link to="/about" className="footer-link hover-lift">About</Link>
             <Link to="/services" className="footer-link hover-lift">Collection</Link>
